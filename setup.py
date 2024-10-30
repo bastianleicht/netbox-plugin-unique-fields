@@ -2,11 +2,11 @@ from setuptools import find_packages, setup
 
 setup(
     name='netbox-plugin-unique-fields',
-    version='0.1.0',
-    description='Plugin for unique "custom" fields in Netbox v2.11.x',
+    version='0.1.1',
+    description='Plugin for unique "custom" fields in Netbox',
     url='',
-    author='Johann Wagner <johann.wagner@wobcom.de>',
-    license='GPL-3.0',
+    author='Bastian Leicht <bl@city-pc.de>',
+    license='MIT',
     packages=find_packages(),
     include_package_data=True,
 )

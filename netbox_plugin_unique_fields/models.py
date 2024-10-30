@@ -1,42 +1,27 @@
-from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
-
-from utilities.querysets import RestrictedQuerySet
-from netbox.models import ChangeLoggedModel
-
-__all__ = (
-    'SID',
-)
+from extras.models import CustomField
+from dcim.models import DeviceRole
 
 
-class SID(ChangeLoggedModel):
-
-    sid = models.PositiveIntegerField(
-        blank=False,
-        null=False,
-        unique=True,
-        verbose_name="SID",
-        validators=[
-            MinValueValidator(524288),
-            MaxValueValidator(526336),
-        ],
-
-    )
-
-
-    device = models.OneToOneField(
-        to='dcim.Device',
+class RoleCustomFieldMapping(models.Model):
+    """Map custom fields to specific device roles"""
+    custom_field = models.ForeignKey(
+        to=CustomField,
         on_delete=models.CASCADE,
-        related_name='sid',
-        blank=True,
-        null=True,
+        related_name='role_mappings'
     )
-
-    objects = RestrictedQuerySet.as_manager()
+    device_role = models.ForeignKey(
+        to=DeviceRole,
+        on_delete=models.CASCADE,
+        related_name='custom_field_mappings'
+    )
+    description = models.CharField(
+        max_length=200,
+        blank=True
+    )
 
     class Meta:
-        verbose_name = 'SID'
-        verbose_name_plural = 'SIDs'
-
-    def __str__(self):
-        return str(self.sid)
+        unique_together = ['custom_field', 'device_role']
+        ordering = ['custom_field', 'device_role']
+        verbose_name = 'Role Custom Field Mapping'
+        verbose_name_plural = 'Role Custom Field Mappings'

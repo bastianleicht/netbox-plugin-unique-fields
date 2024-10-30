@@ -1,16 +1,12 @@
 from rest_framework import serializers
-
-from dcim.api.nested_serializers import NestedDeviceSerializer
-from dcim.models import *
-from netbox.api.serializers import CustomFieldModelSerializer
-from netbox_plugin_unique_fields.models import SID
+from ..models import RoleCustomFieldMapping
 
 
-class SIDSerializer(CustomFieldModelSerializer):
-    device = NestedDeviceSerializer()
+class RoleCustomFieldMappingSerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(
+        view_name='plugins-api:netbox_role_custom_fields-api:rolecustomfieldmapping-detail'
+    )
 
     class Meta:
-        model = SID
-        fields = [
-            'id', 'device', 'sid', 'created', 'last_updated',
-        ]
+        model = RoleCustomFieldMapping
+        fields = ['id', 'url', 'custom_field', 'device_role', 'description']
