@@ -12,13 +12,13 @@ class RoleCustomFieldsConfig(PluginConfig):
     required_settings = []
     default_settings = {}
 
-    def ready(self):
-        super().ready()
-        from . import signals
+    #def ready(self):
+    #    super().ready()
+    #    from . import signals
 
         # Register custom validators
-        from netbox.models import CustomField
-        from .validators import validate_role_specific_field
-        CustomField.validators.append(validate_role_specific_field)
+#        from netbox.models import CustomField
+#        from .validators import validate_role_specific_field
+#        CustomField.validators.append(validate_role_specific_field)
 
 config = RoleCustomFieldsConfig
