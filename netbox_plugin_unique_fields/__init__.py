@@ -20,3 +20,5 @@ class RoleCustomFieldsConfig(PluginConfig):
         from netbox.models import CustomField
         from .validators import validate_role_specific_field
         CustomField.validators.append(validate_role_specific_field)
+
+config = RoleCustomFieldsConfig
