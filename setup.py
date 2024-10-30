@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name='netbox-plugin-unique-fields',
+    name='netbox-role-custom-fields',
     version='0.1.1',
     description='Plugin for unique "custom" fields in Netbox',
     url='',
