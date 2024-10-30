@@ -1,4 +1,4 @@
-from extras.plugins import PluginConfig
+from netbox.plugins import PluginConfig
 
 
 class RoleCustomFieldsConfig(PluginConfig):
@@ -17,6 +17,6 @@ class RoleCustomFieldsConfig(PluginConfig):
         from . import signals
 
         # Register custom validators
-        from extras.models import CustomField
+        from netbox.models import CustomField
         from .validators import validate_role_specific_field
         CustomField.validators.append(validate_role_specific_field)

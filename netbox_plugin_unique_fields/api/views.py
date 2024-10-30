@@ -1,5 +1,5 @@
 from dcim.models import *
-from extras.api.views import CustomFieldModelViewSet
+from netbox.api.views import CustomFieldModelViewSet
 from . import serializers
 from ..filtersets import SIDFilterSet
 from ..models import SID

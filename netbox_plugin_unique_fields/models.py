@@ -1,5 +1,5 @@
 from django.db import models
-from extras.models import CustomField
+from netbox.models import CustomField
 from dcim.models import DeviceRole
 
 
