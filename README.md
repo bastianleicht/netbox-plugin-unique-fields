@@ -8,7 +8,7 @@ Right now, it only supports a specific field for one specific use case but may b
 ## Installation
 
 + Install `netbox-plugin-unique-fields` from VCS
-  + `pip install -e git+https://github.com/wobcom/netbox-plugin-unique-fields@x.x.x#egg=netbox-plugin-unique-fields`
+  + `pip install -e git+https://github.com/bastianleicht/netbox-plugin-unique-fields@x.x.x#egg=netbox-plugin-unique-fields`
 + Add `netbox-plugin-unique-fields` to PLUGINS
 
 ## Usage
