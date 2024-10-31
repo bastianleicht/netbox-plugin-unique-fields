@@ -1,7 +1,7 @@
 from netbox.plugins import PluginConfig
 
 class NetBoxRoleCustomFieldsConfig(PluginConfig):
-    name = 'netbox_role_customfields'
+    name = 'netbox-role-custom-fields'
     verbose_name = 'NetBox Role Custom Fields'
     description = 'Custom Fields based on device roles in NetBox'
     version = '1.0'
