@@ -1,4 +1,4 @@
-from extras.plugins import PluginConfig
+from netbox.plugins import PluginConfig
 
 class NetBoxRoleCustomFieldsConfig(PluginConfig):
     name = 'netbox_role_customfields'
